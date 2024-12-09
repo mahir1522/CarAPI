@@ -1,6 +1,5 @@
 # Car API
-
-A simple API for managing cars using C# Web API
+A simple API for managing cars in database using C# Web API. The API stores data in JSON file, and provides endpoints to CRUD. Eash car has attriburtes like id, make, model, and year. 
 
 # Endpoints
 
@@ -50,4 +49,10 @@ A simple API for managing cars using C# Web API
 
 
 
+# Installation
+
+- .NET SDK, Visual stdio code
+- `git clone https://github.com/mahir1522/Final `
+- `cd Final`
+- `dotnet run` - to run the project
 
