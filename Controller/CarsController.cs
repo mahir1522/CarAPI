@@ -96,5 +96,19 @@ namespace CarApi.CarsController
             WriteCar(cars);
             return Ok(editedCar);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id){
+            var cars = GetCars();
+
+            var car = cars.FirstOrDefault(x => x.Id == id);
+
+            if (car == null){
+                return NotFound(new {Message = "Car not found"});
+            }
+            cars.Remove(car);
+            WriteCar(cars);
+            return Ok(new {Message = "Car deleted successfully"});
+        }
     }
 }
