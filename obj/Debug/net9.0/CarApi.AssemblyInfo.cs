@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CarApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+afc5664e19b8b4e842e17a3abe5bf878f9367cb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
