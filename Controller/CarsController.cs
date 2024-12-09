@@ -58,5 +58,22 @@ namespace CarApi.CarsController
             } 
             return Ok(car);
         }
+
+        [HttpPost]
+        public IActionResult Create(Car newCar){
+
+            if(newCar == null) return BadRequest("Car data is missing");
+
+            var cars = GetCars();
+
+            var newId = cars.Any()? cars.Max(x => x.Id) + 1: 1;
+            newCar.Id = newId;
+
+            cars.Add(newCar);
+            WriteCar(cars);
+
+            return CreatedAtAction(nameof(GetById), new { id = newCar.Id}, newCar);
+        }
+
     }
 }
