@@ -59,6 +59,9 @@ namespace CarApi.CarsController
             return Ok(car);
         }
 
+
+        // Endpoint as : http://localhost:5267/api/cars
+        // make sure to add the data with this req
         [HttpPost]
         public IActionResult Create(Car newCar){
 
@@ -75,5 +78,23 @@ namespace CarApi.CarsController
             return CreatedAtAction(nameof(GetById), new { id = newCar.Id}, newCar);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Car editedCar){
+            if(editedCar == null) return BadRequest("Car data is missing");
+
+            var cars = GetCars();
+
+            var existingCar = cars.FirstOrDefault(x => x.Id == id);
+            if(existingCar == null){
+                return NotFound(new { Message = "Car not found"});
+            }
+
+            existingCar.Make = editedCar.Make;
+            existingCar.Model = editedCar.Model;
+            existingCar.Year = editedCar.Year;
+
+            WriteCar(cars);
+            return Ok(editedCar);
+        }
     }
 }
